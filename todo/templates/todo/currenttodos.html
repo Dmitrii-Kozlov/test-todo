@@ -2,8 +2,11 @@
 <ul>
   {% for todo in todos %}
   <li>
-    {% if todo.important %}
-    <b> {% endif %} {{ todo.title }} {% if todo.important %} </b> {% endif %} {% if todo.memo %} - {{todo.memo}} {% endif %}
+    {% if todo.important %} <b> {% endif %} 
+      <a href="{{ todo.get_absolute_url }}"> {{todo.title }} </a>
+    {% if todo.important %} </b> {% endif %} 
+    {% if todo.memo %} - {{todo.memo}} 
+    {% endif %}
   </li>
   {% endfor %}
 </ul>
